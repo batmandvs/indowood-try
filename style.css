@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*<!--FONT AWESOME-->*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --a-color:#ffffff;
+    --b-color:#6A2222;
+    --c-color:#007E36;
+    --f-color:#0FB800;
+    --d-color:#707070;
+    --e-color:#000000;
+}
+/*Main CSS*/
+html {
+    font-size:62.5%;
+    overflow-x: hidden;
+    size: 85.375rem;
+}
+
+body {
+    background:var(--a-color);
+    color: var(--e-color);
+    width: 100%;
+    
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+
+}
+
+/*HEADER DESAIN*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    gap: 0%;
+    display: flex;
+    padding: 1.5rem ;
+    background: var(--a-color);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex; /* Agar gambar dan teks tetap sejajar */
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--b-color);
+    font-weight: 900;
+    gap: 0.7rem;
+    cursor: default;
+    font-family: "Montserrat", sans-serif;
+    margin-top: -5px; /* Atur nilai untuk menaikkan */
+}
+
+
+.navbar a {
+    font-size: 1.5rem;
+    color: var(--e-color);
+    margin-left: 4rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color:var(--b-color)
+}
+
+.navbar a:active {
+    color: var(--e-color);
+}
+
+#Menu-icon {
+    font-size: 3.6rem;
+    color: var(--e-color);
+    display: none;
+}
+
+/* Home Desain */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tinggi penuh layar */
+    width: 100vw; /* Lebar penuh layar */
+    overflow: hidden; /* Hilangkan elemen yang keluar */
+    background: var(--a-color);
+    margin: 0; /* Pastikan tidak ada margin */
+    padding: 0; /* Pastikan tidak ada padding */
+}
+
+.home-content {
+    position: relative;
+    width: 100%; /* Lebar penuh kontainer */
+    height: 100%; /* Tinggi penuh kontainer */
+    display: flex;
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+}
+
+.home-content img {
+    width: 100%; /* Pastikan gambar mengisi penuh lebar kontainer */
+    height: 100%; /* Pastikan gambar mengisi penuh tinggi kontainer */
+    object-fit: cover; /* Mengisi area tanpa merusak rasio aspek */
+
+    /* Animasi slide-in */
+    transform: translateX(0);
+    opacity: 0;
+    animation: slide-in 1.5s ease-out forwards;
+}
+
+
+.center-text {
+    position: absolute;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 3.1rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 4.1rem;
+    width: 60rem;
+    height: auto;
+
+    color: var(--a-color);
+
+    /* Animasi fade-in */
+    opacity: 0;
+    animation: fade-in 2s ease-out forwards;
+    animation-delay: 1.5s; /* Teks muncul setelah gambar selesai */
+
+    
+}
+
+/* Keyframes untuk gambar */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes untuk teks */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Home body desain */
+.homebody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--snd-bg-color);
+}
+
+.home-body1 img {
+    width: 35vw;
+}
+
+.teks1{
+    margin: 1rem 0 3rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.4rem;
+    width: 60rem;
+
+}
+
+/* Home body 2 desain*/
+.homebody2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--a-color);
+    
+
+}
+
+.home-body2 img {
+    width: 35vw;
+}
+
+.teks2 {
+    position: relative; /* Membuat kontainer sebagai referensi untuk positioning */
+    text-align: right; /* Pastikan semua teks rata kanan */
+}
+
+.teks2 b {
+    font-size: 2.7rem;
+    color: var(--b-color);
+    width: 60rem;
+    display: block; /* Pastikan judul berada di baris sendiri */
+    margin-bottom: 1.5rem; /* Jarak bawah antara judul dan paragraf */
+    font-family: "Roboto", sans-serif;
+}
+
+
+.teks2 p {
+    font-size: 2.4rem;
+    width: 60rem;
+    display: block; /* Pastikan paragraf di baris sendiri */
+    margin-bottom: 4rem; /* Jarak bawah antara paragraf dan tombol */
+    font-family: "Roboto",sans-serif;
+}
+
+.btn {
+    padding: 0.65rem 1.5rem;
+    background-color: var(--a-color);
+    color: var(--b-color);
+    border: 0.06rem solid var(--b-color);
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+    font-weight: 400;
+    float: right; /* Tetap berada di sisi kanan */
+
+}
+
+/*Our Service Desain*/
+.Our {
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.Our h2 {
+    color: var(--b-color);
+    font-size: 3rem;
+    font-family: "Roboto";
+    position: flex;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.portofolio-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+    width: 100%;
+
+}
+
+.portofolio-box {
+    width: calc(33% - 2rem);
+    text-align: center;
+    position: relative;
+    background-color: var(--a-color);
+    border: 0.05rem solid var(--a-color);
+    margin-top: 1rem;
+    margin: 1rem;
+}
+
+.portofolio-container .portofolio-box {
+    transition: .5s ease;
+}
+
+.portofolio-container .portofolio-box:hover {
+    border-color: var(--b-color);
+    transform: scale(1.02);
+    border: 0.06rem solid var(--b-color)
+}
+
+.portofolio-box img {
+    object-fit: cover;
+    width: 28rem;
+}
+
+.portofolio-layer {
+    display: flex; /* Aktifkan flexbox */
+    flex-direction: column; /* Tata letak vertikal */
+    justify-content: center; /* Pusatkan konten secara vertikal */
+    align-items: center; /* Pusatkan konten secara horizontal */
+    text-align: center; /* Pusatkan teks */
+}
+
+.portofolio-layer b {
+    font-family: "Roboto";
+    font-size: 2rem;
+    width: 18rem;
+    font-weight: 400;
+}
+
+.portofolio-layer p {
+    font-family: "Roboto";
+    font-size: 1.2rem ;
+    font-weight: 400;
+    text-align: center;
+    margin:0.5rem;
+    width: 18rem;
+    
+    
+}
+
+.portofolio-layer a {
+    font-size: 1.9rem;
+}
+
+.btn1 {
+    padding: 0.65rem 1.5rem;
+    background-color: var(--a-color);
+    color: var(--b-color);
+    border: 1px solid var(--b-color);
+    display: inline-block;
+    font-family: "Roboto";
+    border: 0rem 0rem 0rem 0rem;
+    margin-top: 0.6rem;
+}
+
+.view {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    background-color: var(--b-color);
+    color: var(--a-color);
+    border: 0.06rem solid var(--b-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+    font-weight: 400;
+}
+
+/* Contact US */
+.contactus {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contactus img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.contact-teks {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 4vw; /* Menggunakan vw agar proporsional */
+    width: 80%;
+    max-width: 900px; /* Batasi agar tidak terlalu besar di layar besar */
+    color: var(--a-color);
+    padding: 1rem;
+    line-height: 1.2;
+    z-index: 1;
+    margin-bottom: 15vh; /* Sesuaikan jarak dari bawah */
+}
+.cu {
+    position: absolute; /* Agar tombol berada di atas gambar */
+    text-align: center;
+    z-index: 2; /* Di atas gambar */
+    padding: 1rem 2rem; /* Ukuran tombol */
+    background: linear-gradient(to bottom, #007e36, #0FB800); /* Gradasi dari hitam ke hijau */
+    color: white; /* Warna teks tombol */
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem; /* Ukuran teks tombol */
+    border-radius: 5px; /* Tambahkan sedikit border radius */
+    text-decoration: none; /* Hilangkan garis bawah */
+    transition: 0.3s ease; /* Animasi untuk hover */
+    border: none; /* Hilangkan border default */
+    bottom: 10%;
+}
+
+.contactus2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Hilangkan padding di container */
+    width: 100vw;
+    margin: 0; /* Hilangkan margin di container */
+}
+
+.contactus-box {
+    width: calc(16.6666%); /* 6 gambar per baris */
+    margin: 0; /* Hilangkan margin di setiap box */
+    padding: 0; /* Hilangkan padding di setiap box */
+    box-sizing: border-box; /* Pastikan padding dan border tidak mempengaruhi lebar */
+}
+
+.contactus-box img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.contactus-box img:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Informasi */
+.informasi {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    min-height: 60vh; /* Berikan batas minimal agar tidak terlalu pendek */
+    margin: 4rem;
+}
+
+
+.contact-info, .information, .newsletter {
+    width: 32%; /* Sesuaikan lebar agar ada ruang antar elemen */
+    margin: 0; /* Hilangkan margin */
+    display: flex;
+    flex-direction: column; /* Atur elemen secara vertikal */
+    justify-content: flex-start; /* Pastikan konten dimulai dari atas */
+}
+
+.contact-info .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--b-color);
+    font-weight: 900;
+    cursor: default;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 2rem; /* Kurangi jarak bawah logo agar lebih seimbang */
+}
+
+.contact-info h3 {
+    color: var(--b-color);
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    margin: 2rem 0; /* Jarak atas dan bawah */
+}
+
+.contact-detail {
+    margin-top: 0; /* Hilangkan jarak atas dari h3 agar lebih sejajar */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Pusatkan ikon dan teks secara vertikal */
+    margin-bottom: 0.5rem; /* Jarak antar item */
+
+}
+
+.contact-item i, .contact-item img {
+    margin-right: 0.9rem; /* Jarak antara ikon dan teks */
+    font-size: 2.2rem; /* Ukuran ikon */
+}
+
+.contact-item span {
+    font-size: 1.5rem; /* Ukuran teks */
+    line-height: 1.5; /* Spasi antar baris */
+    width: 45%;
+    
+}
+
+.information {
+    text-align: left;
+    margin-top: 6.5rem; /* Sesuaikan posisi agar sejajar dengan contact-detail */
+}
+
+.information h3, .newsletter h3 {
+    color: var(--b-color);
+    font-size: 2rem;
+    margin: 2rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.info-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-detail ul li a {
+    color: var(--e-color);
+    text-decoration: none;
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+
+/*Newsletter*/
+.newsletter {
+    margin-top: 6.5rem; /* Sesuaikan posisi agar sejajar dengan contact-detail */
+    margin-right: 5rem; /* Geser sedikit ke kiri */
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.newsletter input[type="email"] {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid var(--d-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Gunakan selector yang lebih spesifik untuk tombol submit */
+.newsletter form .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--b-color);
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    height: 100%;
+}
+
+.newsletter form .submit-btn img {
+    width: 2rem; /* Sesuaikan ukuran gambar */
+    height: auto;
+}
+
+/* Pastikan sosial media tidak terpengaruh */
+.social-media {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.social-media a img {
+    margin: 1rem;
+    margin-right: 0.5rem;
+    width: 4rem;
+    height: auto;
+}
+
+.social-media a:last-child img {
+    margin-right: 0;
+}
+
+
+/*Footer*/
+.footer {
+    width: 100vw;
+    display: fixed;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2.5rem 9%;
+    background: var(--b-color);
+}
+
+.footer-text {
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    color: var(--a-color);
+    font-size: 2rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    #Menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--a-color);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .homebody, .homebody2, .informasi {
+        flex-direction: column;
+    }
+
+    .home-body1 img, .home-body2 img, .contactus-box {
+        width: 100%;
+    }
+
+    .portofolio-box {
+        width: calc(100% - 2rem);
+    }
+
+    .contact-info, .information, .newsletter {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter input[type="email"] {
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .newsletter button {
+        border-radius: 0.5rem;
+    }
+
+    .contactus img {
+        object-fit: contain;
+    }
+
+    
+}
+
+@media (max-width: 1024px) {
+    .contactus-box {
+        flex: 1 1 calc(25% - 10px); /* 4 kolom */
+    }
+}
+
+@media (max-width: 768px) {
+    .contactus-box {
+        flex: 1 1 calc(33.3333% - 10px); /* 3 kolom */
+    }
+}
+
+@media (max-width: 480px) {
+    .contactus-box {
+        flex: 1 1 calc(50% - 10px); /* 2 kolom */
+    }
+}
+
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .center-text {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        width: 90%;
+    }
+
+    .teks1, .teks2 p {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .btn, .btn1, .view {
+        font-size: 1.6rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .contactus2 {
+        flex-direction: column;
+    }
+
+
+
+    .footer {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
